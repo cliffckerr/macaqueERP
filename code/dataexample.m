@@ -1,3 +1,5 @@
+% Load the file and 
+
 filename = '/u/cliffk/bill/data/juemo/raw/epocheddata.mat';
 d = load(filename);
 
