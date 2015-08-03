@@ -27,7 +27,7 @@
 %% 0. Housekeeping
 
 datadir='/home/cliffk/bill/data/juemo/raw/'; % Which directory to look for data in
-outfile=[datadir 'epocheddata-aud.mat']; % Output filename
+outfile='../data/epocheddata-aud.mat'; % Output filename
 oldrate=2000; % Sampling rate in Hz
 epochstart=-0.2; % Start of epoch in s
 epochend=0.4; % End of epoch in s
@@ -43,7 +43,7 @@ stimcount=zeros(2,2,2,length(channels)); % Number of stimuli; dimensions are: at
 
 %% 1. Loading data
 
-allfiles=dir('*.cnt'); % Get all file names
+allfiles=dir([datadir '*.cnt']); % Get all file names
 nfiles=length(allfiles);
 
 
@@ -51,7 +51,7 @@ nfiles=length(allfiles);
 for Z=1:nfiles % Loop over files
     tic
     fprintf('\nLoading file %i of %i (%s)...\n',Z,nfiles,allfiles(Z).name)
-    tmpdata=X_loadcnt(allfiles(Z).name);
+    tmpdata=X_loadcnt([datadir allfiles(Z).name]);
     origdata=tmpdata.data'; % Pull out the interesting array and transpose it
     
     
