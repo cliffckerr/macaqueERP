@@ -15,7 +15,7 @@
 %     Hz       = sampling rate in Hz
 %     attend   = whether or not the visual stimuli were being attended to
 %     xaxis    = simply epoch*Hz; the time points corresponding to the data
-%     [std     = visual standard epoched data, dimensions are channel | trial | time] -- optional
+%     std     = visual standard epoched data, dimensions are channel | trial | time] -- optional
 %     odd      = visual oddball epoched data, dimensions are channel | trial | time
 %  
 % Note that the trials in the data span multiple recording sessions. Part 2
