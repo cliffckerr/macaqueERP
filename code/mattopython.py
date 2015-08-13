@@ -37,8 +37,11 @@ from scipy.io import loadmat
 
 import utils as u
 from numpy import save
+import os.path
 
-filedir = '../data/'
+
+filedir = os.path.dirname(os.path.dirname(__file__))+"\\data\\"
+
 outputfile = 'epocheddata'
 
 print('Loading data...')
