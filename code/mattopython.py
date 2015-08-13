@@ -9,7 +9,7 @@ data      = 2x2 dict array (1st dimension: attend vs. non-attend; 2nd dimension:
 data[i,j] = dictionary with the following keys:
     filename = full name of original file
     epoch    = peristimulus window in s
-    channels = channels from the original file
+    channels = chant nels from the original file
     Hz       = sampling rate in Hz
     attend   = whether or not the visual stimuli were being attended to
     xaxis    = simply epoch*Hz; the time points corresponding to the data
@@ -21,23 +21,27 @@ data[i,j] = dictionary with the following keys:
 
 from matplotlib.pylab import empty
 from scipy.io import loadmat
-<<<<<<< HEAD
-import os.path
 
-def getmatdata():
+#import os.path
+#
+#def getmatdata():
+#
+#    #filename = "C:\\Users\\Felicity\\macaqueERP\\data\\"
+#    filename = os.path.normcase("C:/Users/Felicity/macaqueERP/data/epocheddata.mat")
+#    print('Loading data...')
+#    orig = loadmat(filename)
+#    data = orig['data']
+#    print('Done.')
+#    return data
 
-    #filename = "C:\\Users\\Felicity\\macaqueERP\\data\\"
-    filename = os.path.normcase("C:/Users/Felicity/macaqueERP/data/epocheddata.mat")
-    print('Loading data...')
-    orig = loadmat(filename)
-    data = orig['data']
-    print('Done.')
-    return data
-=======
+
 import utils as u
 from numpy import save
+import os.path
 
-filedir = '../data/'
+
+filedir = os.path.dirname(os.path.dirname(__file__))+"\\data\\"
+
 outputfile = 'epocheddata'
 
 print('Loading data...')
@@ -67,4 +71,3 @@ save(filedir+outputfile, data)
 
 
 print('Done.')
->>>>>>> 7b6f15fbf851f942884c3b90668d067213f8a315
