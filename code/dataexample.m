@@ -1,6 +1,6 @@
 % Load the file and 
 
-filename = '/u/cliffk/bill/data/juemo/raw/epocheddata.mat';
+filename = 'C:/Users/Felicity/macaqueERP/data/epocheddata.mat';
 d = load(filename);
 
 electrode = 1;

@@ -8,11 +8,14 @@ Convert data from Matlab to Python
 """
 
 from scipy.io import loadmat
+import os.path
 
-filename = '/u/cliffk/bill/data/juemo/raw/epocheddata.mat'
+def getmatdata():
 
-print('Loading data...')
-orig = loadmat(filename)
-data = orig['data']
-
-print('Done.')
+    #filename = "C:\\Users\\Felicity\\macaqueERP\\data\\"
+    filename = os.path.normcase("C:/Users/Felicity/macaqueERP/data/epocheddata.mat")
+    print('Loading data...')
+    orig = loadmat(filename)
+    data = orig['data']
+    print('Done.')
+    return data
