@@ -7,13 +7,11 @@ Created on Wed Aug  5 15:14:01 2015
 
 
 def run(command, printinput=False, printoutput=False):
-   """ Make it easier to run bash commands """
+   """ Make it easier to run bash commands. Version: 1.0 Date: 2015aug16 """
    from subprocess import Popen, PIPE
    if printinput: print(command)
-   try:
-       output = Popen(command, shell=True, stdout=PIPE).communicate()[0]
-   except:
-       output = 'Shell command failed'
+   try: output = Popen(command, shell=True, stdout=PIPE).communicate()[0]
+   except: output = 'Shell command failed'
    if printoutput: print(output)
    return output
 
@@ -88,7 +86,8 @@ def printdata(data, name='Variable', depth=1, maxlen=40, indent='', level=0, sho
       depth: how many levels of recursion to follow
       maxlen: number of characters of data to display (if 0, don't show data)
       indent: where to start the indent (used internally)
-    
+
+    Version: 1.0 (2015aug21)    
     """
     datatype = type(data)
     def printentry(data):
