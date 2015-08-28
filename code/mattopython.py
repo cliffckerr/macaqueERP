@@ -21,6 +21,9 @@ data[i,j] = dictionary with the following keys:
 
 from matplotlib.pylab import empty
 from scipy.io import loadmat
+import time
+import os.path
+import numpy as np
 
 #import os.path
 #
@@ -67,7 +70,28 @@ for i in range(2): # Loop over attend vs. non-attend
 
 
 print('Saving data...')
-save(filedir+outputfile, data)
+
+
+
+t4 = time.time()
+np.savez_compressed(filedir+outputfile+"szc", data)
+t5 = time.time()
+print(os.path.getsize(filedir+outputfile+"szc.npz"))
+print t5-t4
+
+t0 = time.time()
+np.save(filedir+outputfile+"s", data)
+t1 = time.time()
+print(os.path.getsize(filedir+outputfile+"s.npy"))
+print t1 - t0
+
+t2 = time.time()
+np.savez(filedir+outputfile+"sz", data)
+t3 = time.time()
+print(os.path.getsize(filedir+outputfile+"sz.npz"))
+print t3-t2
+
+
 
 
 print('Done.')
