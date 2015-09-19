@@ -3,7 +3,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-data = np.load("data/epocheddata.npy")
+data = np.load("../data/epocheddata.npy")
 
 attendtext = raw_input("Attended or unattended?\n")
 regiontext = raw_input("IT or V4?\n")
