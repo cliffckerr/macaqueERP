@@ -9,11 +9,12 @@ import numpy as np
 colormap = plt.cm.rainbow
 num_plots = 14
 plt.gca().set_color_cycle([colormap(i) for i in np.linspace(0, 0.99, num_plots)])
-data = np.load("data/epocheddata.npy")
+
 #
 #attendtext = raw_input("Attended or unattended?\n")
 #regiontext = raw_input("IT or V4?\n")
 #electrodestext = raw_input("Which electrodes?\n")
+data = np.load("../data/epocheddata.npy")
 
 attendtext = "unattend"
 regiontext = "IT"

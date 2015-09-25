@@ -49,7 +49,7 @@ outputfile = 'epocheddata'
 
 print('Loading data...')
 
-datakeys = ['filename', 'epoch', 'channels', 'Hz', 'attend', 'xaxis', 'std', 'odd']
+datakeys = ['filename', 'epoch', 'area', 'channels', 'Hz', 'attend', 'xaxis', 'std', 'odd']
 data = empty((2,2), dtype=object) # Array of dictionaries
 for i in range(2): # Loop over attend vs. non-attend
     for j in range(2): # Loop over IT vs. V4
