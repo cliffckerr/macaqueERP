@@ -12,6 +12,7 @@ exampledata = d.data{1,1};
 xdata = exampledata.xaxis;
 ydata = squeeze(exampledata.odd(electrode,trial,:));
 
+
 meanydata = squeeze(mean(exampledata.odd(electrode,:,:),2));
 
 hold on
