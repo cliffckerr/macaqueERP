@@ -1,24 +1,22 @@
 % Load the file and 
 
 filename = 'C:/Users/Felicity/macaqueERP/data/epocheddata.mat';
-d = load(filename);
+errorfilename = 'C:/Users/Felicity/macaqueERP/data/errordata.mat';
+norm = load(filename);
+error = load(errorfilename);
 
-electrode = 1;
-trial = 4;
+electrode = round(input('Which electrode? (1-14)\n'));
 
+normdata = norm.data{1,1}.odd;
+errordata = error.data{1,1}.noleverresponse;
+xdata = norm.data{1,1}.xaxis;
 
-exampledata = d.data{1,1};
-
-xdata = exampledata.xaxis;
-ydata = squeeze(exampledata.odd(electrode,trial,:));
-
-
-meanydata = squeeze(mean(exampledata.odd(electrode,:,:),2));
-
+normmeanydata = squeeze(mean(normdata(electrode,:,:),2));
+errormeanydata = squeeze(mean(errordata(electrode,:,:),2));
+plot(xdata,normmeanydata)
 hold on
-plot(xdata,meanydata)
+plot(xdata, errormeanydata)
 xlabel('Time (s)')
 ylabel('Voltage (\muV)')
-
 
 disp('Done.')
