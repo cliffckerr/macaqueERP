@@ -2,8 +2,10 @@
 % so label accordingly 
 
 % load the files 
-filename = 'C:/Users/Felicity/macaqueERP/data/epochedtemp.mat';
-errorfilename = 'C:/Users/Felicity/macaqueERP/data/errordata.mat';
+% filename = 'C:/Users/Felicity/macaqueERP/data/epochedtemp.mat';
+% errorfilename = 'C:/Users/Felicity/macaqueERP/data/errordata.mat';
+filename = '/u/cliffk/drive/usyd/macaqueERP/data/epochedtemp.mat';
+errorfilename = '/u/cliffk/drive/usyd/macaqueERP/data/errordata.mat';
 norm = load(filename);
 error = load(errorfilename);
 
